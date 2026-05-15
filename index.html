@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Petals, Parks & Pavement | Boston to Chicago in Spring</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400;0,600;1,400&family=Lora:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --spring-pink: #F4D4E8;
+            --spring-green: #C8E6C9;
+            --spring-cream: #FFFBF5;
+            --spring-sage: #A8B8A0;
+            --spring-rose: #E89BB5;
+            --spring-gold: #D4AF8E;
+            --spring-teal: #7BA89F;
+            --text-dark: #2C2C2C;
+            --text-light: #666666;
+            --accent-coral: #F08080;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Lora', serif;
+            background: linear-gradient(135deg, var(--spring-cream) 0%, #F9F1E8 50%, #F0E6DB 100%);
+            color: var(--text-dark);
+            line-height: 1.8;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Animated background elements */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 30%, rgba(244, 212, 232, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(200, 230, 201, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 50% 50%, rgba(212, 175, 142, 0.05) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        /* Floating petals animation */
+        @keyframes float-petals {
+            0% { transform: translateY(-100px) translateX(0) rotate(0deg); opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { transform: translateY(100vh) translateX(100px) rotate(360deg); opacity: 0; }
+        }
+
+        .petal {
+            position: fixed;
+            pointer-events: none;
+            z-index: 2;
+        }
+
+        .petal::before {
+            content: '🌸';
+            font-size: 1.5rem;
+            display: block;
+            animation: float-petals linear infinite;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 251, 245, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1.5rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(200, 230, 201, 0.3);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        .nav-logo {
+            font-family: 'Bodoni Moda', serif;
+            font-size: 1.3rem;
+            font-weight: 600;
+            background: linear-gradient(135deg, var(--spring-teal), var(--spring-rose));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: 1px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+            position: relative;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-weight: 500;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--spring-rose);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 0;
+            padding: 2rem;
+            overflow: hidden;
+            z-index: 10;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                linear-gradient(45deg, transparent 30%, rgba(232, 155, 181, 0.1) 50%, transparent 70%),
+                linear-gradient(-45deg, transparent 20%, rgba(168, 184, 160, 0.08) 45%, transparent 65%);
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            text-align: center;
+            max-width: 800px;
+            z-index: 20;
+            animation: fade-up 1.2s ease-out;
+        }
+
+        @keyframes fade-up {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero h1 {
+            font-family: 'Bodoni Moda', serif;
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            line-height: 1.1;
+            background: linear-gradient(135deg, var(--spring-teal) 0%, var(--spring-rose) 50%, var(--spring-gold) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: -1px;
+        }
+
+        .hero h2 {
+            font-family: 'Lora', serif;
+            font-size: 1.3rem;
+            font-weight: 400;
+            color: var(--text-light);
+            margin-bottom: 2rem;
+            font-style: italic;
+            letter-spacing: 0.5px;
+        }
+
+        .hero-meta {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateX(-50%) translateY(0); }
+            50% { transform: translateX(-50%) translateY(-20px); }
+        }
+
+        .scroll-indicator svg {
+            width: 24px;
+            height: 24px;
+            stroke: var(--spring-rose);
+            fill: none;
+        }
+
+        /* Main Content */
+        main {
+            position: relative;
+            z-index: 15;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        /* Day Sections */
+        .day-section {
+            margin-bottom: 6rem;
+            animation: fade-in-up 0.8s ease-out;
+            animation-fill-mode: both;
+        }
+
+        @keyframes fade-in-up {
+            from {
+                opacity: 0;
+                transform: translateY(60px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .day-header {
+            position: relative;
+            margin-bottom: 3rem;
+            padding-bottom: 2rem;
+            border-bottom: 2px solid var(--spring-green);
+        }
+
+        .day-header::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -2px;
+            height: 2px;
+            width: 60%;
+            background: linear-gradient(90deg, var(--spring-rose), var(--spring-teal));
+        }
+
+        .day-number {
+            font-family: 'Bodoni Moda', serif;
+            font-size: 1.2rem;
+            color: var(--spring-rose);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 0.5rem;
+        }
+
+        .day-title {
+            font-family: 'Bodoni Moda', serif;
+            font-size: 2.5rem;
+            color: var(--text-dark);
+            margin-bottom: 0.5rem;
+            line-height: 1.2;
+        }
+
+        .day-subtitle {
+            color: var(--text-light);
+            font-size: 1rem;
+            font-style: italic;
+        }
+
+        .section-title {
+            font-family: 'Bodoni Moda', serif;
+            font-size: 1.8rem;
+            color: var(--spring-teal);
+            margin: 2.5rem 0 1.5rem 0;
+            padding-bottom: 1rem;
+            border-bottom: 2px dashed var(--spring-pink);
+        }
+
+        p {
+            margin-bottom: 1.5rem;
+            color: var(--text-light);
+            line-height: 2;
+        }
+
+        p:first-letter {
+            font-size: 1.1em;
+            font-weight: 600;
+        }
+
+        /* Decorative dividers */
+        .divider {
+            text-align: center;
+            margin: 3rem 0;
+            font-size: 1.5rem;
+            color: var(--spring-rose);
+            opacity: 0.6;
+        }
+
+        /* Callout boxes */
+        .highlight {
+            background: linear-gradient(135deg, rgba(244, 212, 232, 0.3) 0%, rgba(200, 230, 201, 0.2) 100%);
+            border-left: 4px solid var(--spring-rose);
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 4px;
+            font-style: italic;
+            color: var(--text-dark);
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, var(--spring-sage) 0%, var(--spring-teal) 100%);
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+            margin-top: 6rem;
+            position: relative;
+            z-index: 15;
+        }
+
+        footer h3 {
+            font-family: 'Bodoni Moda', serif;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        footer p {
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 0.5rem;
+        }
+
+        footer a {
+            color: var(--spring-cream);
+            text-decoration: none;
+            transition: opacity 0.3s ease;
+        }
+
+        footer a:hover {
+            opacity: 0.7;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero h2 {
+                font-size: 1rem;
+            }
+
+            .day-title {
+                font-size: 1.8rem;
+            }
+
+            .section-title {
+                font-size: 1.3rem;
+            }
+
+            nav {
+                padding: 1rem;
+            }
+
+            .nav-logo {
+                font-size: 1rem;
+            }
+        }
+
+        /* Loading stagger for day sections */
+        .day-section:nth-child(1) { animation-delay: 0s; }
+        .day-section:nth-child(2) { animation-delay: 0.15s; }
+        .day-section:nth-child(3) { animation-delay: 0.3s; }
+        .day-section:nth-child(4) { animation-delay: 0.45s; }
+        .day-section:nth-child(5) { animation-delay: 0.6s; }
+    </style>
+</head>
+<body>
+    <!-- Floating petals -->
+    <div id="petal-container"></div>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-logo">🌸 Petals, Parks & Pavement</div>
+        <ul class="nav-links">
+            <li><a href="#day1">Day 1</a></li>
+            <li><a href="#day2">Day 2</a></li>
+            <li><a href="#day3">Day 3</a></li>
+            <li><a href="#day4">Day 4</a></li>
+            <li><a href="#day5">Day 5</a></li>
+            <li><a href="#day6">Day 6</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Petals, Parks & Pavement</h1>
+            <h2>Boston to Chicago in Spring</h2>
+            <div class="hero-meta">
+                <span>April 19–24, 2025</span>
+                <span>2,100+ miles</span>
+                <span>6 days</span>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 2v20M5 15l7 7 7-7"></path>
+            </svg>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Day 1 -->
+        <section class="day-section" id="day1">
+            <div class="day-header">
+                <div class="day-number">Day One</div>
+                <h2 class="day-title">The Road Begins at Eleven</h2>
+                <p class="day-subtitle">April 19, 2025 | Boston → Letchworth → Presque Isle → Holland, Michigan</p>
+            </div>
+
+            <p>There's something magical about beginning a road trip after sunset — the city still buzzing behind you, highway lights flickering rhythmically along the road, and endless miles of adventure stretching beyond the windshield.</p>
+
+            <p>We left Boston right at eleven, the kind of departure that feels less like a start and more like slipping quietly into the night. The Mass Pike carried us west as Worcester drifted past in a wash of amber lights, and soon enough, Massachusetts gave way to New York. The hours unfolded gently—playlists rotating, podcasts fading in and out, occasional conversation breaking up long stretches of silence. Outside, the April air stayed cool and crisp against the windows, while coffee thermoses did their steady, necessary work inside the car.</p>
+
+            <div class="highlight">
+                "By the time the first light of dawn began to soften the sky over New York's Southern Tier, we were already descending toward the gorge."
+            </div>
+
+            <h3 class="section-title">Letchworth State Park: The Grand Canyon of the East</h3>
+
+            <p>Letchworth State Park — often called the "Grand Canyon of the East" — is the kind of place that naturally slows you down. Carved by the Genesee River over thousands of years, its deep canyon walls rise dramatically on either side, holding mist in the early morning air. We stepped out into the chill and followed the rim trail, watching the landscape wake up with us.</p>
+
+            <p>The three waterfalls revealed themselves one by one in the soft morning light. Upper Falls thundered with spring melt, powerful and constant; Middle Falls stretched wide and cinematic, framed by the canyon walls; and Lower Falls shimmered more quietly below a natural stone bridge, almost hidden if you weren't looking closely. It was one of those stops where time feels like it pauses for a moment — not because you planned it, but because the place quietly demands it.</p>
+
+            <h3 class="section-title">Presque Isle State Park</h3>
+
+            <p>Our next stop was the slim, curved peninsula of Presque Isle State Park in Pennsylvania. The land stretches into the lake like a gentle hook, wrapping into the cold grey-blue water. By the time we arrived, the afternoon had already started to soften into golden light. We headed straight to Gull Point, the quiet sandy tip of the park, and settled in to watch the day slow down.</p>
+
+            <p>Sunset here felt like a show in slow motion. The lake changed color in layers — soft apricot, then pink, then a deep plum that slowly melted into the horizon. A few pelicans drifted overhead in formation, and the breeze coming off the water carried that fresh, slightly wild lake smell that instantly makes you feel far from everything.</p>
+
+            <p>We rolled into Holland, Michigan just before midnight, checked into the hotel, and collapsed in that perfect kind of exhaustion that comes after a full day of travel done right.</p>
+
+            <div class="divider">✦</div>
+        </section>
+
+        <!-- Day 2 -->
+        <section class="day-section" id="day2">
+            <div class="day-header">
+                <div class="day-number">Day Two</div>
+                <h2 class="day-title">A Town Dressed in Tulips</h2>
+                <p class="day-subtitle">April 20, 2025 | Holland, Michigan → Chicago, Illinois</p>
+            </div>
+
+            <p>Holland, Michigan in April feels like walking straight into a painting that hasn't realized it's being watched. The town doesn't just decorate for spring — it overflows with it. Every street, park, and roadside median bursts into color, tulips everywhere in unapologetic abundance: vivid crimson, soft butter yellow, deep royal violet, and those unmistakable coral-pink blooms that feel almost engineered for maximum impact.</p>
+
+            <h3 class="section-title">Tulip Time Festival</h3>
+
+            <p>Tulip Time, the annual festival that transforms this lakeside city every spring, was in full swing. We followed the parade route before the morning crowds thickened, past Dutch colonial storefronts and wooden-shoe workshops. On Centennial Park, children in traditional Klompen costumes were rehearsing their wooden-shoe dances with an earnestness that was both charming and completely serious. We bought stroopwafels from a street stall and ate them warm, caramel threading between each bite.</p>
+
+            <p>Windmill Island Gardens anchored the morning properly: a genuine 18th-century working windmill called De Zwaan — the Swan — imported from the Netherlands in 1964, rising above a canal fringed with tulip beds as far as the eye could see. We climbed partway into the mill to watch its wooden gears turn, then sat on the grass below it for a long while, doing nothing useful at all.</p>
+
+            <h3 class="section-title">Arriving in Chicago</h3>
+
+            <p>The drive across Indiana was wide, flat, and refreshingly unshowy — endless stretches of prairie sliding past as the road carried us forward with an easy, unhurried rhythm. By late afternoon, the Chicago skyline finally rose on the horizon, that unmistakable first reveal emerging from the plains like a bold exclamation: steel and glass standing tall against an immense Midwestern sky.</p>
+
+            <p>We checked into the hotel, dropped our bags, and made our way straight to the Art Institute of Chicago, squeezing in the final couple of hours before closing with no real agenda — just drifting from gallery to gallery. Inside, the museum unfolded like a quiet conversation across centuries. American Gothic greeted us with its familiar, almost unsettling stillness. A Sunday on La Grande Jatte pulled us in twice over — first from a distance as a serene Parisian afternoon frozen in time, then up close where it dissolved into dots and strokes, revealing its hidden structure.</p>
+
+            <div class="highlight">
+                "Standing there, it's impossible not to reflect on the clarity and simplicity of what he expressed — a vision of universal acceptance, mutual respect, and the belief that all paths ultimately lead toward the same truth."
+            </div>
+
+            <div class="divider">✦</div>
+        </section>
+
+        <!-- Day 3 -->
+        <section class="day-section" id="day3">
+            <div class="day-header">
+                <div class="day-number">Day Three</div>
+                <h2 class="day-title">Under the Lake, Under the Cloud</h2>
+                <p class="day-subtitle">April 21, 2025 | Chicago — Shedd Aquarium · Millennium Park · Downtown</p>
+            </div>
+
+            <p>Chicago's second day was an exercise in contrasts: first we went below the waterline, into the cool blue world of the Shedd Aquarium, then we emerged into the full theatrical brightness of Millennium Park, where the city reflects itself back at you in silver.</p>
+
+            <h3 class="section-title">Shedd Aquarium</h3>
+
+            <p>Shedd Aquarium feels like stepping into another world — one that's underwater, glowing, and full of life from the very start. Inside, one of the coolest spots is the Amazon Rising exhibit. It looks like a flooded jungle, with huge fish called arapaima slowly drifting past tangled tree roots. It honestly feels like you're peeking into a secret world hidden deep in the rainforest.</p>
+
+            <p>But the real highlight is the Wild Reef. Imagine a giant ocean tank where sharks glide right above you and stingrays move like they're flying underwater. We stayed there for a long time just watching a single shark swim in calm circles — it's surprisingly relaxing to see something so powerful move so smoothly without rushing anywhere.</p>
+
+            <h3 class="section-title">Cloud Gate: The City in a Mirror</h3>
+
+            <p>In the afternoon, we made our way to Cloud Gate — better known across Chicago as "The Bean," though the city wears that nickname with a kind of knowing smile. Anish Kapoor's mirrored sculpture needs no introduction, yet still manages to outdo expectation in person. Its polished steel surface doesn't simply reflect the city — it reshapes it. The skyline bends into arcs of silver, pedestrians stretch and compress into moving silhouettes, and the sky folds back into itself until horizon and reflection become indistinguishable.</p>
+
+            <p>Standing beneath it, the experience becomes almost cinematic. The underside — a smooth, concave vault — pulls the entire city into a single floating frame, as if Chicago has been temporarily suspended and turned inward. What's most striking is the way people respond to it. Children instinctively press closer, laughing as their reflections split and multiply across the curved surface, turning themselves into part of the artwork.</p>
+
+            <p>The rest of the afternoon unfolded on foot — unhurried, unplanned city walking, the kind that turns aimless wandering into its own quiet form of discovery. We drifted down Michigan Avenue, where historic stone façades stand directly across from sleek glass towers, neither trying to outshine the other. The city doesn't choose between old and new here — it simply lets them coexist.</p>
+
+            <div class="divider">✦</div>
+        </section>
+
+        <!-- Day 4 -->
+        <section class="day-section" id="day4">
+            <div class="day-header">
+                <div class="day-number">Day Four</div>
+                <h2 class="day-title">Field Museum, Piers, and the Mother Road</h2>
+                <p class="day-subtitle">April 22, 2025 | Chicago — Field Museum · Navy Pier · Route 66</p>
+            </div>
+
+            <p>If Day Three was about water and reflection, Day Four was about deep time — the Field Museum's thirteen billion years of natural history compressed into a single building — and then, in the evening, the city's own architectural history narrated from the water.</p>
+
+            <h3 class="section-title">Inside Deep Time: The Field Museum</h3>
+
+            <p>Field Museum of Natural History is the kind of place where time immediately starts to feel elastic. From the entrance onward, there's a quiet awareness that no single visit is ever enough — every hall opens into another world, and every turn feels like you're choosing what not to see.</p>
+
+            <p>And then, at the center of the museum's main hall, everything naturally pulls toward Sue (Tyrannosaurus rex). She is not just displayed there — she dominates the space. At 40 feet long and built from one of the most complete Tyrannosaurus rex skeletons ever discovered, SUE carries a presence that feels almost architectural, as if the entire hall was designed around her scale rather than her being placed within it.</p>
+
+            <div class="highlight">
+                "The longer you stand there, the more she shifts from object to presence. Not alive, not animate — but undeniably once part of a world where she moved with certainty through ecosystems that no longer exist."
+            </div>
+
+            <h3 class="section-title">The Chicago Riverwalk & Architecture River Cruise</h3>
+
+            <p>Late afternoon on the Chicago Riverwalk is one of those quietly satisfying city experiences that doesn't announce itself as special — but absolutely is. Tucked below street level along the river's edge, it stretches between Michigan Avenue and Lake Shore Drive, offering a different rhythm of Chicago entirely, one that moves with water instead of traffic.</p>
+
+            <p>The evening belonged to the Chicago Architecture River Cruise, a 75-minute journey that feels less like a tour and more like moving through an open-air museum where the exhibits rise on both sides of the water. What makes Chicago so compelling from this angle is how clearly its architectural history reads in sequence. The early, heavy masonry of the Chicago School gives way to the vertical confidence of the skyscraper era, and then to glass towers that reflect everything around them rather than compete with it.</p>
+
+            <p>We stood in front of the "Start of Route 66" marker — the original eastern terminus, surprisingly modest, just a simple sign on a street corner. Yet in the quiet of the night, it carried a weight far beyond its size. From this very spot, the legendary highway once stretched all the way to Santa Monica, California — 2,448 miles of road, towns, and changing landscapes.</p>
+
+            <div class="divider">✦</div>
+        </section>
+
+        <!-- Day 5 -->
+        <section class="day-section" id="day5">
+            <div class="day-header">
+                <div class="day-number">Day Five</div>
+                <h2 class="day-title">From Chicago to Pennsylvania</h2>
+                <p class="day-subtitle">April 23, 2025 | A Journey Through America's Heartland</p>
+            </div>
+
+            <p>Leaving Chicago felt like closing a book before you're quite ready to. The skyline shrank in the rearview mirror with characteristic reluctance — even retreating, it takes up more visual space than most cities manage at their best.</p>
+
+            <p>Interstate 80 across Indiana and Ohio is the definition of straightforward, no-nonsense driving — not conventionally scenic, yet quietly grand in its own way. The landscape stretches out in long, level runs of farmland and open sky, where the horizon feels unusually distant and grain silos rise like markers of small towns spaced carefully along the route, every couple of miles a brief reminder of life between the exits.</p>
+
+            <p>We made steady progress eastward, passing through the outskirts of Cleveland and continuing across the Pennsylvania border, the rhythm of the road staying constant and unhurried. The only pause came at a roadside diner outside Youngstown, where we stopped for gas and lunch. Inside, the coffee was dark, strong, and endlessly refilled before we even had the chance to ask — the kind of place that doesn't rush you, because the road already has its own pace waiting outside.</p>
+
+            <p>Hershey received us that night with a faint, almost playful sweetness in the air — the kind that seems to hang over the town itself. The Hershey Company is often credited with this signature scent, carried by its factory ventilation that locals say runs day and night, drifting chocolate notes across streets, intersections, and quiet neighborhoods.</p>
+
+            <div class="divider">✦</div>
+        </section>
+
+        <!-- Day 6 -->
+        <section class="day-section" id="day6">
+            <div class="day-header">
+                <div class="day-number">Day Six</div>
+                <h2 class="day-title">History, Chocolate, Outlets, and Home</h2>
+                <p class="day-subtitle">April 24, 2025 | Gettysburg → Hershey → King of Prussia → Boston</p>
+            </div>
+
+            <p>The last day of a road trip has its own particular emotional weather — a brightness tinged with mild pre-emptive nostalgia, the trip not yet over but already being remembered.</p>
+
+            <h3 class="section-title">Gettysburg: A Journey Through Silence, Sacrifice, and Memory</h3>
+
+            <p>Gettysburg, Pennsylvania, doesn't announce itself loudly. The roads narrow, the buildings soften into brick and wood, and the landscape slowly opens into rolling fields that look almost ordinary—until you know what happened here.</p>
+
+            <p>I arrived early in the morning, when the mist still clung to the grass like it wasn't ready to let go of the night. The town felt calm in a way that made you lower your voice without thinking. But Gettysburg is not calm. It is quiet for a reason. This is where the turning point of the American Civil War unfolded in 1863.</p>
+
+            <p>The heart of the experience is the Gettysburg National Military Park. It doesn't feel like a park in the casual sense. It feels like a preserved breath—held for more than a century. Standing on Cemetery Ridge, the land stretches out in a way that makes distances feel personal. You can see why commanders made decisions that seemed strategic on paper but devastating on the ground.</p>
+
+            <div class="highlight">
+                "What makes Gettysburg different from reading about it is the human scale of it all. At the visitor center, families trace names on plaques, veterans stand quietly, and travelers try to reconcile beauty with loss."
+            </div>
+
+            <h3 class="section-title">Hershey's Chocolate World</h3>
+
+            <p>We devoted the next part of the morning properly to Hershey, letting the town set its own pace. Hershey's Chocolate World is exactly what it promises — an unapologetically enthusiastic celebration of the confection that defined the place. From the factory tour ride to the tasting experience, everything is designed with a kind of earnest joy. At the chocolate pairing counter, we were guided through single-origin cacao from Ghana, Peru, and Indonesia with the same careful attention usually reserved for fine wine.</p>
+
+            <h3 class="section-title">The Final Stretch Home</h3>
+
+            <p>By late morning, we were back on the Pennsylvania Turnpike, heading northeast toward home. The final stretch came as we set out at 8 PM, merging onto I-276 and then I-95 North, the road narrowing into that familiar ribbon through Delaware and New Jersey. Somewhere along the way, the George Washington Bridge rose out of the dark, and for a brief moment the Manhattan skyline appeared off to the south — distant, glowing, almost unreal in passing.</p>
+
+            <p>Connecticut slipped by in the late night, quiet and unremarkable in the best way. The Rhode Island border came and went without ceremony. Mile after mile dissolved into headlights, engine hum, and the steady rhythm of a road that had now become second nature.</p>
+
+            <p>And then, at around 2 AM, after roughly 2,100 miles and six days — after a Midwest sunset that stayed in memory longer than it should, a gorge carved by a river that never asked for permission, a lake that held sharks beneath its surface, and a city that kept building itself again and again in glass and steel — we arrived Home.</p>
+
+            <div class="highlight">
+                "Every road trip ends with the same feeling: that you are slightly different than when you left, and that the difference, while difficult to name precisely, is wholly good."
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <h3>Petals, Parks & Pavement</h3>
+        <p>A spring journey from Boston to Chicago and back</p>
+        <p>April 19–24, 2025</p>
+        <p style="margin-top: 1.5rem; font-size: 0.9rem;">Written with care, designed for wanderers, built for storytellers.</p>
+    </footer>
+
+    <script>
+        // Generate floating petals
+        function createPetal() {
+            const container = document.getElementById('petal-container');
+            const petal = document.createElement('div');
+            petal.className = 'petal';
+            
+            // Random horizontal position
+            const startX = Math.random() * window.innerWidth;
+            petal.style.left = startX + 'px';
+            petal.style.top = '-50px';
+            
+            // Random animation duration (8-15 seconds)
+            const duration = 8 + Math.random() * 7;
+            petal.style.animationDuration = duration + 's';
+            
+            // Random animation delay
+            petal.style.animationDelay = Math.random() * 5 + 's';
+            
+            // Random opacity
+            petal.style.opacity = 0.4 + Math.random() * 0.6;
+            
+            container.appendChild(petal);
+            
+            // Remove petal after animation ends
+            setTimeout(() => {
+                petal.remove();
+            }, (duration + 5) * 1000);
+        }
+
+        // Create petals periodically
+        setInterval(createPetal, 2000);
+
+        // Smooth scroll for nav links
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const target = document.querySelector(link.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+
+        // Intersection observer for fade-in animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.day-section').forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
