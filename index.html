@@ -44,7 +44,6 @@
             overflow-x: hidden;
         }
 
-        /* Animated background elements */
         body::before {
             content: '';
             position: fixed;
@@ -60,7 +59,6 @@
             z-index: 1;
         }
 
-        /* Floating petals animation */
         @keyframes float-petals {
             0% { transform: translateY(-100px) translateX(0) rotate(0deg); opacity: 0; }
             10% { opacity: 1; }
@@ -81,7 +79,6 @@
             animation: float-petals linear infinite;
         }
 
-        /* Navigation */
         nav {
             position: fixed;
             top: 0;
@@ -147,7 +144,6 @@
             }
         }
 
-        /* Hero Section */
         .hero {
             position: relative;
             height: 100vh;
@@ -243,7 +239,6 @@
             fill: none;
         }
 
-        /* Main Content */
         main {
             position: relative;
             z-index: 15;
@@ -252,7 +247,6 @@
             padding: 4rem 2rem;
         }
 
-        /* Day Sections */
         .day-section {
             margin-bottom: 6rem;
             animation: fade-in-up 0.8s ease-out;
@@ -330,7 +324,6 @@
             font-weight: 600;
         }
 
-        /* Decorative dividers */
         .divider {
             text-align: center;
             margin: 3rem 0;
@@ -339,7 +332,6 @@
             opacity: 0.6;
         }
 
-        /* Callout boxes */
         .highlight {
             background: linear-gradient(135deg, rgba(244, 212, 232, 0.3) 0%, rgba(200, 230, 201, 0.2) 100%);
             border-left: 4px solid var(--spring-rose);
@@ -350,7 +342,6 @@
             color: var(--text-dark);
         }
 
-        /* Newsletter */
         .newsletter-section {
             position: relative;
             z-index: 15;
@@ -451,7 +442,6 @@
             }
         }
 
-        /* Footer */
         footer {
             background: linear-gradient(135deg, var(--spring-sage) 0%, var(--spring-teal) 100%);
             color: white;
@@ -483,7 +473,6 @@
             opacity: 0.7;
         }
 
-        /* Responsive */
         @media (max-width: 768px) {
             .hero h1 {
                 font-size: 2.5rem;
@@ -510,14 +499,12 @@
             }
         }
 
-        /* Loading stagger for day sections */
         .day-section:nth-child(1) { animation-delay: 0s; }
         .day-section:nth-child(2) { animation-delay: 0.15s; }
         .day-section:nth-child(3) { animation-delay: 0.3s; }
         .day-section:nth-child(4) { animation-delay: 0.45s; }
         .day-section:nth-child(5) { animation-delay: 0.6s; }
 
-        /* Photo styling */
         .trip-photo {
             width: 100%;
             border-radius: 8px;
@@ -569,6 +556,71 @@
                 grid-template-columns: 1fr;
             }
         }
+
+        /* Trip facts / quick answer box */
+        .trip-facts {
+            position: relative;
+            z-index: 15;
+            max-width: 900px;
+            margin: 0 auto 3rem;
+            padding: 2rem;
+            background: linear-gradient(135deg, rgba(244, 212, 232, 0.25) 0%, rgba(200, 230, 201, 0.18) 100%);
+            border: 1px solid rgba(168, 184, 160, 0.35);
+            border-radius: 14px;
+        }
+
+        .trip-facts h2 {
+            font-family: 'Bodoni Moda', serif;
+            font-size: 1.4rem;
+            color: var(--spring-teal);
+            margin-bottom: 1rem;
+        }
+
+        .trip-facts p {
+            margin-bottom: 0.75rem;
+            font-size: 0.98rem;
+        }
+
+        .trip-facts ul {
+            margin: 0.5rem 0 0 1.2rem;
+            color: var(--text-light);
+        }
+
+        .trip-facts li {
+            margin-bottom: 0.4rem;
+        }
+
+        /* FAQ section */
+        .faq-section {
+            position: relative;
+            z-index: 15;
+            max-width: 900px;
+            margin: 0 auto 3rem;
+            padding: 2.5rem 2rem;
+            border-top: 2px solid var(--spring-green);
+        }
+
+        .faq-section h2 {
+            font-family: 'Bodoni Moda', serif;
+            font-size: 2rem;
+            color: var(--spring-teal);
+            margin-bottom: 2rem;
+        }
+
+        .faq-item {
+            margin-bottom: 1.75rem;
+        }
+
+        .faq-item h3 {
+            font-family: 'Bodoni Moda', serif;
+            font-size: 1.2rem;
+            color: var(--text-dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .faq-item p {
+            margin-bottom: 0;
+        }
     </style>
     <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZVHJ5D22Z9"></script>
@@ -589,6 +641,38 @@
   gtag('config', 'G-SDEWVST892');
 </script>
     <meta name="p:domain_verify" content="69a802757cc22f53cff980b77e252f0f"/>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How long is the drive from Boston to Chicago?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Driving directly from Boston to Chicago covers about 980-1,000 miles and takes roughly 15-16 hours of driving time, depending on route and traffic. On this trip we took a slower, scenic 6-day route with stops at Letchworth State Park, Presque Isle, and Holland, Michigan, covering over 2,100 miles round trip."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the best route to drive from Chicago to Boston?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The most direct route follows I-90 East through Ohio, Pennsylvania, and New York into Massachusetts. For a more scenic version, consider detouring through the Finger Lakes region of New York to visit Letchworth State Park, or along Lake Erie to Presque Isle State Park in Pennsylvania."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How many days should I plan for a Boston to Chicago road trip?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A direct drive can be done in one long day (about 15-16 hours) or split into two comfortable driving days. If you want to add scenic stops like Letchworth State Park, Holland, Michigan, or Presque Isle, plan for 3-6 days depending on how many detours you take."
+          }
+        }
+      ]
+    }
+    </script>
 </head>
 <body>
     <!-- Floating petals -->
@@ -623,6 +707,20 @@
                 <path d="M12 2v20M5 15l7 7 7-7"></path>
             </svg>
         </div>
+    </section>
+
+    <!-- Trip facts quick-answer box -->
+    <section class="trip-facts" id="trip-facts">
+        <h2>Boston to Chicago Drive: The Quick Facts</h2>
+        <p><strong>Direct drive distance:</strong> ~980-1,000 miles</p>
+        <p><strong>Direct drive time:</strong> ~15-16 hours nonstop, best split across two days</p>
+        <p><strong>Fastest route:</strong> I-90 West through New York, Pennsylvania, and Ohio into Chicago</p>
+        <p><strong>Our route:</strong> We took the scenic version — 6 days, 2,100+ miles round trip — with detours to Letchworth State Park, Presque Isle State Park, and Holland, Michigan's Tulip Time Festival before reaching Chicago.</p>
+        <ul>
+            <li>Best overnight stop driving west: Erie, PA or Cleveland, OH</li>
+            <li>Scenic detour worth the extra time: Letchworth State Park, NY ("Grand Canyon of the East")</li>
+            <li>Spring bonus stop: Holland, Michigan during Tulip Time Festival (mid-to-late April)</li>
+        </ul>
     </section>
 
     <!-- Main Content -->
@@ -831,6 +929,31 @@
                 "Every road trip ends with the same feeling: that you are slightly different than when you left, and that the difference, while difficult to name precisely, is wholly good."
             </div>
         </section>
+
+        <!-- FAQ Section -->
+        <section class="faq-section" id="faq">
+            <h2>Boston to Chicago Drive: Frequently Asked Questions</h2>
+
+            <div class="faq-item">
+                <h3>How long is the drive from Boston to Chicago?</h3>
+                <p>Driving directly from Boston to Chicago covers roughly 980-1,000 miles and takes about 15-16 hours behind the wheel, depending on your route and traffic. Most drivers split it into two days rather than pushing straight through.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>What is the best route to drive from Chicago to Boston?</h3>
+                <p>The fastest way is I-90 East through Ohio, Pennsylvania, and New York into Massachusetts. For a scenic alternative, detour through New York's Finger Lakes region to see Letchworth State Park, or hug the Lake Erie shoreline to stop at Presque Isle State Park in Pennsylvania — both featured on our route below.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>How many days should I plan for a Boston to Chicago road trip?</h3>
+                <p>A direct drive can be done in one long day or split comfortably across two. If you want to add scenic stops — Letchworth State Park, Presque Isle, or Holland, Michigan during Tulip Time — plan for anywhere from 3 to 6 days, which is the pace we took on this trip.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>What's a good halfway stopping point between Boston and Chicago?</h3>
+                <p>Erie, Pennsylvania or Cleveland, Ohio both sit roughly at the midpoint and make sensible overnight stops. If you want a scenic detour instead of a highway stop, Presque Isle State Park in Erie is a worthwhile break from the road.</p>
+            </div>
+        </section>
     </main>
 
     
@@ -850,33 +973,26 @@
             const petal = document.createElement('div');
             petal.className = 'petal';
             
-            // Random horizontal position
             const startX = Math.random() * window.innerWidth;
             petal.style.left = startX + 'px';
             petal.style.top = '-50px';
             
-            // Random animation duration (8-15 seconds)
             const duration = 8 + Math.random() * 7;
             petal.style.animationDuration = duration + 's';
             
-            // Random animation delay
             petal.style.animationDelay = Math.random() * 5 + 's';
             
-            // Random opacity
             petal.style.opacity = 0.4 + Math.random() * 0.6;
             
             container.appendChild(petal);
             
-            // Remove petal after animation ends
             setTimeout(() => {
                 petal.remove();
             }, (duration + 5) * 1000);
         }
 
-        // Create petals periodically
         setInterval(createPetal, 2000);
 
-        // Smooth scroll for nav links
         document.querySelectorAll('.nav-links a').forEach(link => {
             link.addEventListener('click', (e) => {
                 e.preventDefault();
@@ -887,7 +1003,6 @@
             });
         });
 
-        // Intersection observer for fade-in animations
         const observerOptions = {
             threshold: 0.1,
             rootMargin: '0px 0px -100px 0px'
