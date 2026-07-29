@@ -3,13 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Boston to Chicago Road Trip Itinerary — Spring Waterfalls & National Parks</title>
-<meta name="description" content="A detailed Boston to Chicago spring road trip itinerary with stops at waterfalls, parks, and scenic drives — real photos, tips, and day-by-day planning.">
-<meta name="keywords" content="Boston to Chicago road trip, spring road trip itinerary, Midwest road trip, family road trip planning">
-<meta property="og:title" content="Petals, Parks & Pavement — Boston to Chicago in Spring">
-<meta property="og:description" content="A spring road trip from Boston to Chicago, with waterfalls, parks, and family travel tips.">
+    <title>Boston to Chicago Road Trip Itinerary — 6-Day Scenic Drive & Best Stops</title>
+<meta name="description" content="A complete Boston to Chicago road trip itinerary: scenic drive route, best stops (Letchworth State Park, Presque Isle, Holland Michigan), day-by-day plan, costs, and packing checklist.">
+<meta name="keywords" content="Boston to Chicago road trip, Boston to Chicago drive itinerary, 7-day Boston to Chicago itinerary, best stops between Boston and Chicago, Boston to Chicago scenic drive, Chicago road trip from Boston, Letchworth State Park road trip, things to do in Holland Michigan, driving from Boston to Chicago, Boston to Chicago itinerary, spring road trip itinerary, Midwest road trip, family road trip planning">
+<meta property="og:title" content="Boston to Chicago Road Trip Itinerary — 6-Day Scenic Drive & Best Stops">
+<meta property="og:description" content="A scenic Boston to Chicago road trip itinerary with the best stops along the way — Letchworth State Park, Presque Isle, and Holland, Michigan's Tulip Time — plus day-by-day planning, costs, and packing tips.">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://ani072018.github.io/Boston-Chicago-Boston/">
+<link rel="canonical" href="https://ani072018.github.io/Boston-Chicago-Boston/">
     <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400;0,600;1,400&family=Lora:wght@400;500;600&display=swap" rel="stylesheet">
     <style>
         * {
@@ -779,6 +780,78 @@
             .itinerary-overview h2 { font-size: 1.5rem; }
         }
 
+        /* ===== Best stops section ===== */
+        .best-stops-section {
+            position: relative;
+            z-index: 15;
+            max-width: 900px;
+            margin: 0 auto 3rem;
+            padding: 0 2rem;
+        }
+
+        .best-stops-section h2 {
+            font-family: 'Bodoni Moda', serif;
+            font-size: 2rem;
+            color: var(--spring-teal);
+            margin-bottom: 0.5rem;
+            text-align: center;
+        }
+
+        .best-stops-sub {
+            text-align: center;
+            color: var(--text-light);
+            font-style: italic;
+            font-size: 0.95rem;
+            margin-bottom: 2rem;
+        }
+
+        .stop-list {
+            list-style: none;
+            counter-reset: stop-counter;
+        }
+
+        .stop-item {
+            counter-increment: stop-counter;
+            position: relative;
+            padding: 1.25rem 1.5rem 1.25rem 4rem;
+            margin-bottom: 1rem;
+            background: #fff;
+            border: 1px solid rgba(168, 184, 160, 0.3);
+            border-radius: 12px;
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.04);
+        }
+
+        .stop-item::before {
+            content: counter(stop-counter);
+            position: absolute;
+            left: 1.25rem;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--spring-rose), var(--spring-teal));
+            color: #fff;
+            font-family: 'Bodoni Moda', serif;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.95rem;
+        }
+
+        .stop-item h3 {
+            font-family: 'Bodoni Moda', serif;
+            font-size: 1.1rem;
+            color: var(--text-dark);
+            margin-bottom: 0.4rem;
+        }
+
+        .stop-item p {
+            margin-bottom: 0;
+            font-size: 0.92rem;
+        }
+
         /* ===== Cost breakdown infographic ===== */
         .cost-section {
             position: relative;
@@ -1003,6 +1076,30 @@
             "@type": "Answer",
             "text": "A direct drive can be done in one long day (about 15-16 hours) or split into two comfortable driving days. If you want to add scenic stops like Letchworth State Park, Holland, Michigan, or Presque Isle, plan for 3-6 days depending on how many detours you take."
           }
+        },
+        {
+          "@type": "Question",
+          "name": "What are the best stops between Boston and Chicago?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The best stops between Boston and Chicago include Letchworth State Park in New York (the 'Grand Canyon of the East'), Presque Isle State Park on Lake Erie in Pennsylvania, and Holland, Michigan, especially during the spring Tulip Time Festival. Erie, PA and Cleveland, OH also make convenient overnight stops roughly at the halfway point."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is a good scenic route for a Boston to Chicago road trip?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "For a scenic Boston to Chicago drive, leave I-90 for detours through New York's Finger Lakes region to see Letchworth State Park, then follow the Lake Erie shoreline through Erie, Pennsylvania to Presque Isle State Park, and finish with a stop in Holland, Michigan before continuing on to Chicago."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What are the best things to do in Holland, Michigan?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "In Holland, Michigan, don't miss the Tulip Time Festival in April, Windmill Island Gardens with its authentic 18th-century Dutch windmill De Zwaan, downtown's Dutch-influenced storefronts, and local stroopwafel stalls. It's a worthwhile stop on any Boston to Chicago road trip during spring."
+          }
         }
       ]
     }
@@ -1017,6 +1114,7 @@
         <div class="nav-logo">🌸 Boston to Chicago Road Trip Itinerary — Spring Waterfalls & Tulip Festival</div>
         <ul class="nav-links">
             <li><a href="#route-map">Route</a></li>
+            <li><a href="#best-stops">Best Stops</a></li>
             <li><a href="#day1">Day 1</a></li>
             <li><a href="#day2">Day 2</a></li>
             <li><a href="#day3">Day 3</a></li>
@@ -1190,6 +1288,34 @@
         </div>
     </section>
 
+    <!-- Best stops between Boston and Chicago -->
+    <section class="best-stops-section" id="best-stops">
+        <h2>The Best Stops Between Boston and Chicago</h2>
+        <p class="best-stops-sub">If you only add a few detours to a Boston to Chicago drive, make it these</p>
+        <ol class="stop-list">
+            <li class="stop-item">
+                <h3>Letchworth State Park, New York</h3>
+                <p>Known as the "Grand Canyon of the East," Letchworth is one of the most rewarding stops on any Letchworth State Park road trip — three waterfalls and a river gorge just off the route through New York's Southern Tier.</p>
+            </li>
+            <li class="stop-item">
+                <h3>Presque Isle State Park, Pennsylvania</h3>
+                <p>A curved peninsula on Lake Erie near Erie, PA, worth timing for sunset at Gull Point. A natural, low-effort break roughly a third of the way into a Boston to Chicago scenic drive.</p>
+            </li>
+            <li class="stop-item">
+                <h3>Erie, PA or Cleveland, OH</h3>
+                <p>Both sit close to the halfway point of the direct drive, making them the two most practical overnight stops if you're splitting the trip into two driving days.</p>
+            </li>
+            <li class="stop-item">
+                <h3>Holland, Michigan</h3>
+                <p>A lakeside Dutch-heritage town that's especially worth the detour in spring — see the "Things to do in Holland Michigan" note below for what to prioritize during Tulip Time.</p>
+            </li>
+            <li class="stop-item">
+                <h3>Gettysburg & Hershey, Pennsylvania</h3>
+                <p>On the return leg, Gettysburg National Military Park and Hershey's Chocolate World make an easy history-and-sweets combination before the final overnight push back to Boston.</p>
+            </li>
+        </ol>
+    </section>
+
     <!-- Main Content -->
     <main>
         <!-- Day 1 -->
@@ -1237,7 +1363,7 @@
 
             <h3 class="section-title">Tulip Time Festival</h3>
 
-            <img src="images/Holland_tulip.JPG" alt="Fields of colorful tulips in Holland, Michigan during Tulip Time Festival" class="trip-photo">
+            <img src="images/Holland_tulip.JPG" alt="Things to do in Holland, Michigan: tulip fields during Tulip Time Festival, a popular stop on a Boston to Chicago road trip" class="trip-photo">
             <p class="photo-caption">Tulip fields in Holland, Michigan during the Tulip Time Festival</p>
 
             <p>Tulip Time, the annual festival that transforms this lakeside city every spring, was in full swing. We followed the parade route before the morning crowds thickened, past Dutch colonial storefronts and wooden-shoe workshops. On Centennial Park, children in traditional Klompen costumes were rehearsing their wooden-shoe dances with an earnestness that was both charming and completely serious. We bought stroopwafels from a street stall and ate them warm, caramel threading between each bite.</p>
@@ -1510,6 +1636,21 @@
             <div class="faq-item">
                 <h3>What's a good halfway stopping point between Boston and Chicago?</h3>
                 <p>Erie, Pennsylvania or Cleveland, Ohio both sit roughly at the midpoint and make sensible overnight stops. If you want a scenic detour instead of a highway stop, Presque Isle State Park in Erie is a worthwhile break from the road.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>What are the best stops between Boston and Chicago?</h3>
+                <p>Our favorites from this trip: Letchworth State Park in New York (the "Grand Canyon of the East"), Presque Isle State Park on Lake Erie in Pennsylvania, and Holland, Michigan — especially in spring during Tulip Time. Erie and Cleveland work well as overnight stops if you'd rather split the drive than detour.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>Is there a good 7-day Boston to Chicago itinerary?</h3>
+                <p>Yes — stretch this same route to a week by adding an extra night in Chicago or a slower pace through the Finger Lakes. A 7-day version gives you breathing room for Letchworth, Presque Isle, and Holland on the way out, three full days in Chicago, and an unhurried return through Gettysburg and Hershey.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>What are the best things to do in Holland, Michigan?</h3>
+                <p>Time it with the Tulip Time Festival in April if you can — the whole town turns into a sea of color. Beyond the tulips, Windmill Island Gardens has a genuine 18th-century working Dutch windmill, and downtown is worth a walk for Dutch storefronts and fresh stroopwafels.</p>
             </div>
         </section>
     </main>
