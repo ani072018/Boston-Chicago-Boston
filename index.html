@@ -621,6 +621,340 @@
         .faq-item p {
             margin-bottom: 0;
         }
+
+        /* ===== Route Map ===== */
+        .route-map-section {
+            position: relative;
+            z-index: 15;
+            max-width: 900px;
+            margin: 0 auto 3rem;
+            padding: 2.5rem 2rem;
+        }
+
+        .route-map-section h2 {
+            font-family: 'Bodoni Moda', serif;
+            font-size: 2rem;
+            color: var(--spring-teal);
+            margin-bottom: 0.5rem;
+            text-align: center;
+        }
+
+        .route-map-sub {
+            text-align: center;
+            color: var(--text-light);
+            font-style: italic;
+            font-size: 0.95rem;
+            margin-bottom: 2rem;
+        }
+
+        .route-map-card {
+            background: linear-gradient(135deg, #FFFBF5 0%, #F9F1E8 100%);
+            border: 1px solid rgba(168, 184, 160, 0.3);
+            border-radius: 16px;
+            box-shadow: 0 14px 34px rgba(0, 0, 0, 0.06);
+            padding: 1.5rem;
+        }
+
+        .route-map-card svg {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .route-legend {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 1rem;
+            flex-wrap: wrap;
+            font-size: 0.85rem;
+            color: var(--text-light);
+        }
+
+        .route-legend span {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .legend-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            display: inline-block;
+        }
+
+        @media (max-width: 768px) {
+            .route-map-section h2 { font-size: 1.5rem; }
+        }
+
+        /* ===== Day-by-day itinerary graphic ===== */
+        .itinerary-overview {
+            position: relative;
+            z-index: 15;
+            max-width: 900px;
+            margin: 0 auto 3rem;
+            padding: 0 2rem;
+        }
+
+        .itinerary-overview h2 {
+            font-family: 'Bodoni Moda', serif;
+            font-size: 2rem;
+            color: var(--spring-teal);
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .itin-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.25rem;
+        }
+
+        .itin-card {
+            background: linear-gradient(135deg, rgba(244, 212, 232, 0.22) 0%, rgba(200, 230, 201, 0.16) 100%);
+            border: 1px solid rgba(168, 184, 160, 0.3);
+            border-radius: 12px;
+            padding: 1.25rem 1.25rem 1.5rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .itin-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--spring-rose), var(--spring-teal));
+        }
+
+        .itin-day-badge {
+            font-family: 'Bodoni Moda', serif;
+            font-size: 0.75rem;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: var(--spring-rose);
+            margin-bottom: 0.4rem;
+        }
+
+        .itin-card h3 {
+            font-family: 'Bodoni Moda', serif;
+            font-size: 1.15rem;
+            color: var(--text-dark);
+            margin-bottom: 0.5rem;
+            line-height: 1.3;
+        }
+
+        .itin-route {
+            font-size: 0.82rem;
+            color: var(--spring-teal);
+            font-weight: 600;
+            margin-bottom: 0.6rem;
+        }
+
+        .itin-highlights {
+            list-style: none;
+            font-size: 0.85rem;
+            color: var(--text-light);
+        }
+
+        .itin-highlights li {
+            padding-left: 1.1rem;
+            position: relative;
+            margin-bottom: 0.3rem;
+        }
+
+        .itin-highlights li::before {
+            content: '✦';
+            position: absolute;
+            left: 0;
+            color: var(--spring-rose);
+            font-size: 0.7rem;
+        }
+
+        @media (max-width: 768px) {
+            .itin-grid { grid-template-columns: 1fr; }
+            .itinerary-overview h2 { font-size: 1.5rem; }
+        }
+
+        /* ===== Cost breakdown infographic ===== */
+        .cost-section {
+            position: relative;
+            z-index: 15;
+            max-width: 900px;
+            margin: 0 auto 3rem;
+            padding: 2.5rem 2rem;
+            border-top: 2px solid var(--spring-green);
+        }
+
+        .cost-section h2 {
+            font-family: 'Bodoni Moda', serif;
+            font-size: 2rem;
+            color: var(--spring-teal);
+            margin-bottom: 0.5rem;
+            text-align: center;
+        }
+
+        .cost-sub {
+            text-align: center;
+            color: var(--text-light);
+            font-style: italic;
+            font-size: 0.9rem;
+            margin-bottom: 2rem;
+        }
+
+        .cost-bars {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .cost-row {
+            display: grid;
+            grid-template-columns: 140px 1fr 90px;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .cost-label {
+            font-size: 0.9rem;
+            color: var(--text-dark);
+            font-weight: 600;
+        }
+
+        .cost-track {
+            background: rgba(168, 184, 160, 0.15);
+            border-radius: 100px;
+            height: 16px;
+            overflow: hidden;
+        }
+
+        .cost-fill {
+            height: 100%;
+            border-radius: 100px;
+            background: linear-gradient(90deg, var(--spring-rose), var(--spring-teal));
+        }
+
+        .cost-amount {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            text-align: right;
+        }
+
+        .cost-total {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            background: linear-gradient(135deg, rgba(244, 212, 232, 0.3) 0%, rgba(200, 230, 201, 0.2) 100%);
+            border-radius: 10px;
+            padding: 1rem 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .cost-total-label {
+            font-family: 'Bodoni Moda', serif;
+            font-size: 1.1rem;
+            color: var(--text-dark);
+        }
+
+        .cost-total-amount {
+            font-family: 'Bodoni Moda', serif;
+            font-size: 1.6rem;
+            color: var(--spring-rose);
+        }
+
+        .cost-note {
+            font-size: 0.82rem;
+            color: var(--text-light);
+            text-align: center;
+            font-style: italic;
+        }
+
+        @media (max-width: 600px) {
+            .cost-row {
+                grid-template-columns: 100px 1fr 70px;
+            }
+            .cost-section h2 { font-size: 1.5rem; }
+        }
+
+        /* ===== Packing checklist ===== */
+        .packing-section {
+            position: relative;
+            z-index: 15;
+            max-width: 900px;
+            margin: 0 auto 3rem;
+            padding: 2.5rem 2rem;
+            border-top: 2px solid var(--spring-green);
+        }
+
+        .packing-section h2 {
+            font-family: 'Bodoni Moda', serif;
+            font-size: 2rem;
+            color: var(--spring-teal);
+            margin-bottom: 0.5rem;
+            text-align: center;
+        }
+
+        .packing-sub {
+            text-align: center;
+            color: var(--text-light);
+            font-style: italic;
+            font-size: 0.9rem;
+            margin-bottom: 2rem;
+        }
+
+        .packing-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+        }
+
+        .packing-card {
+            background: #fff;
+            border: 1px solid rgba(168, 184, 160, 0.3);
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.04);
+        }
+
+        .packing-card h3 {
+            font-family: 'Bodoni Moda', serif;
+            font-size: 1.1rem;
+            color: var(--spring-rose);
+            margin-bottom: 1rem;
+            padding-bottom: 0.6rem;
+            border-bottom: 2px dashed var(--spring-pink);
+        }
+
+        .packing-list {
+            list-style: none;
+        }
+
+        .packing-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.6rem;
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin-bottom: 0.65rem;
+        }
+
+        .packing-check {
+            flex-shrink: 0;
+            width: 16px;
+            height: 16px;
+            border: 2px solid var(--spring-sage);
+            border-radius: 4px;
+            margin-top: 0.15rem;
+        }
+
+        @media (max-width: 768px) {
+            .packing-grid { grid-template-columns: 1fr; }
+            .packing-section h2 { font-size: 1.5rem; }
+        }
     </style>
     <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZVHJ5D22Z9"></script>
@@ -682,12 +1016,15 @@
     <nav>
         <div class="nav-logo">🌸 Boston to Chicago Road Trip Itinerary — Spring Waterfalls & Tulip Festival</div>
         <ul class="nav-links">
+            <li><a href="#route-map">Route</a></li>
             <li><a href="#day1">Day 1</a></li>
             <li><a href="#day2">Day 2</a></li>
             <li><a href="#day3">Day 3</a></li>
             <li><a href="#day4">Day 4</a></li>
             <li><a href="#day5">Day 5</a></li>
             <li><a href="#day6">Day 6</a></li>
+            <li><a href="#cost-breakdown">Costs</a></li>
+            <li><a href="#packing-checklist">Packing</a></li>
         </ul>
     </nav>
 
@@ -721,6 +1058,136 @@
             <li>Scenic detour worth the extra time: Letchworth State Park, NY ("Grand Canyon of the East")</li>
             <li>Spring bonus stop: Holland, Michigan during Tulip Time Festival (mid-to-late April)</li>
         </ul>
+    </section>
+
+    <!-- Route Map -->
+    <section class="route-map-section" id="route-map">
+        <h2>The Route, Coast to Corn Belt</h2>
+        <p class="route-map-sub">2,100+ miles, two states of mind: outbound scenic, homeward historic</p>
+        <div class="route-map-card">
+            <svg viewBox="0 0 900 460" xmlns="http://www.w3.org/2000/svg">
+                <!-- outbound path -->
+                <path d="M 90 90 C 200 60, 260 130, 330 150 S 470 260, 560 250 S 700 210, 800 170"
+                      fill="none" stroke="#E89BB5" stroke-width="3" stroke-dasharray="2 10" stroke-linecap="round"/>
+                <!-- return path -->
+                <path d="M 800 190 C 720 240, 650 300, 560 330 S 380 380, 260 400 S 140 400, 100 380"
+                      fill="none" stroke="#7BA89F" stroke-width="3" stroke-dasharray="2 10" stroke-linecap="round"/>
+
+                <!-- Boston (shared start/end) -->
+                <circle cx="90" cy="90" r="9" fill="#E89BB5"/>
+                <text x="90" y="68" text-anchor="middle" font-family="Bodoni Moda, serif" font-size="15" fill="#2C2C2C" font-weight="600">Boston</text>
+                <text x="90" y="122" text-anchor="middle" font-family="Lora, serif" font-size="11" fill="#666">start · finish</text>
+
+                <!-- Letchworth -->
+                <circle cx="330" cy="150" r="7" fill="#E89BB5"/>
+                <text x="330" y="132" text-anchor="middle" font-family="Bodoni Moda, serif" font-size="13" fill="#2C2C2C">Letchworth SP</text>
+                <text x="330" y="172" text-anchor="middle" font-family="Lora, serif" font-size="10" fill="#666">NY · waterfalls</text>
+
+                <!-- Presque Isle -->
+                <circle cx="560" cy="250" r="7" fill="#E89BB5"/>
+                <text x="560" y="232" text-anchor="middle" font-family="Bodoni Moda, serif" font-size="13" fill="#2C2C2C">Presque Isle</text>
+                <text x="560" y="272" text-anchor="middle" font-family="Lora, serif" font-size="10" fill="#666">PA · sunset</text>
+
+                <!-- Holland MI -->
+                <circle cx="800" cy="170" r="7" fill="#E89BB5"/>
+                <text x="800" y="152" text-anchor="middle" font-family="Bodoni Moda, serif" font-size="13" fill="#2C2C2C">Holland, MI</text>
+                <text x="800" y="192" text-anchor="middle" font-family="Lora, serif" font-size="10" fill="#666">tulips</text>
+
+                <!-- Chicago (turnaround) -->
+                <circle cx="800" cy="190" r="10" fill="#D4AF8E"/>
+                <text x="838" y="215" text-anchor="middle" font-family="Bodoni Moda, serif" font-size="15" fill="#2C2C2C" font-weight="600">Chicago</text>
+                <text x="838" y="234" text-anchor="middle" font-family="Lora, serif" font-size="10" fill="#666">turnaround · 3 nights</text>
+
+                <!-- Youngstown -->
+                <circle cx="560" cy="330" r="6" fill="#7BA89F"/>
+                <text x="560" y="352" text-anchor="middle" font-family="Bodoni Moda, serif" font-size="12" fill="#2C2C2C">Youngstown</text>
+                <text x="560" y="368" text-anchor="middle" font-family="Lora, serif" font-size="10" fill="#666">OH · diner stop</text>
+
+                <!-- Hershey -->
+                <circle cx="260" cy="400" r="7" fill="#7BA89F"/>
+                <text x="260" y="422" text-anchor="middle" font-family="Bodoni Moda, serif" font-size="13" fill="#2C2C2C">Hershey</text>
+                <text x="260" y="438" text-anchor="middle" font-family="Lora, serif" font-size="10" fill="#666">PA · chocolate</text>
+
+                <!-- Gettysburg -->
+                <circle cx="150" cy="392" r="6" fill="#7BA89F"/>
+                <text x="150" y="374" text-anchor="middle" font-family="Bodoni Moda, serif" font-size="12" fill="#2C2C2C">Gettysburg</text>
+
+                <!-- Home again -->
+                <circle cx="100" cy="380" r="6" fill="#7BA89F"/>
+            </svg>
+        </div>
+        <div class="route-legend">
+            <span><span class="legend-dot" style="background:#E89BB5"></span> Outbound (Boston → Chicago)</span>
+            <span><span class="legend-dot" style="background:#7BA89F"></span> Return (Chicago → Boston)</span>
+            <span><span class="legend-dot" style="background:#D4AF8E"></span> Turnaround city</span>
+        </div>
+    </section>
+
+    <!-- Day-by-day itinerary overview -->
+    <section class="itinerary-overview" id="itinerary-overview">
+        <h2>Six Days, At a Glance</h2>
+        <div class="itin-grid">
+            <div class="itin-card">
+                <div class="itin-day-badge">Day 1 — Apr 19</div>
+                <h3>The Road Begins at Eleven</h3>
+                <div class="itin-route">Boston → Letchworth → Presque Isle → Holland, MI</div>
+                <ul class="itin-highlights">
+                    <li>Overnight drive out of Boston</li>
+                    <li>Letchworth's three waterfalls at dawn</li>
+                    <li>Sunset at Gull Point, Presque Isle</li>
+                </ul>
+            </div>
+            <div class="itin-card">
+                <div class="itin-day-badge">Day 2 — Apr 20</div>
+                <h3>A Town Dressed in Tulips</h3>
+                <div class="itin-route">Holland, MI → Chicago, IL</div>
+                <ul class="itin-highlights">
+                    <li>Tulip Time Festival & Windmill Island</li>
+                    <li>Drive across Indiana into Chicago</li>
+                    <li>Evening at the Art Institute</li>
+                </ul>
+            </div>
+            <div class="itin-card">
+                <div class="itin-day-badge">Day 3 — Apr 21</div>
+                <h3>Under the Lake, Under the Cloud</h3>
+                <div class="itin-route">Chicago, IL</div>
+                <ul class="itin-highlights">
+                    <li>Shedd Aquarium's Wild Reef</li>
+                    <li>Cloud Gate & Michigan Avenue</li>
+                    <li>Skydeck 360 views</li>
+                </ul>
+            </div>
+            <div class="itin-card">
+                <div class="itin-day-badge">Day 4 — Apr 22</div>
+                <h3>Field Museum, Piers & the Mother Road</h3>
+                <div class="itin-route">Chicago, IL</div>
+                <ul class="itin-highlights">
+                    <li>SUE the T. rex at the Field Museum</li>
+                    <li>Chicago Architecture River Cruise</li>
+                    <li>Start of Route 66 marker</li>
+                </ul>
+            </div>
+            <div class="itin-card">
+                <div class="itin-day-badge">Day 5 — Apr 23</div>
+                <h3>From Chicago to Pennsylvania</h3>
+                <div class="itin-route">Chicago, IL → Hershey, PA</div>
+                <ul class="itin-highlights">
+                    <li>I-80 across Indiana & Ohio</li>
+                    <li>Diner stop outside Youngstown</li>
+                    <li>Arrival in chocolate-scented Hershey</li>
+                </ul>
+            </div>
+            <div class="itin-card">
+                <div class="itin-day-badge">Day 6 — Apr 24</div>
+                <h3>History, Chocolate, Outlets & Home</h3>
+                <div class="itin-route">Gettysburg → Hershey → King of Prussia → Boston</div>
+                <ul class="itin-highlights">
+                    <li>Gettysburg National Military Park</li>
+                    <li>Hershey's Chocolate World tasting</li>
+                    <li>Overnight drive home via NYC & CT</li>
+                </ul>
+            </div>
+        </div>
     </section>
 
     <!-- Main Content -->
@@ -927,6 +1394,97 @@
 
             <div class="highlight">
                 "Every road trip ends with the same feeling: that you are slightly different than when you left, and that the difference, while difficult to name precisely, is wholly good."
+            </div>
+        </section>
+
+        <!-- Cost breakdown infographic -->
+        <section class="cost-section" id="cost-breakdown">
+            <h2>What the Trip Cost</h2>
+            <p class="cost-sub">Six days, two travelers, 2,100+ miles — a rough breakdown by category</p>
+            <div class="cost-bars">
+                <div class="cost-row">
+                    <span class="cost-label">Gas</span>
+                    <div class="cost-track"><div class="cost-fill" style="width: 22%;"></div></div>
+                    <span class="cost-amount">$230</span>
+                </div>
+                <div class="cost-row">
+                    <span class="cost-label">Lodging</span>
+                    <div class="cost-track"><div class="cost-fill" style="width: 100%;"></div></div>
+                    <span class="cost-amount">$1,050</span>
+                </div>
+                <div class="cost-row">
+                    <span class="cost-label">Food & Drink</span>
+                    <div class="cost-track"><div class="cost-fill" style="width: 55%;"></div></div>
+                    <span class="cost-amount">$580</span>
+                </div>
+                <div class="cost-row">
+                    <span class="cost-label">Attractions</span>
+                    <div class="cost-track"><div class="cost-fill" style="width: 45%;"></div></div>
+                    <span class="cost-amount">$470</span>
+                </div>
+                <div class="cost-row">
+                    <span class="cost-label">Parking & Tolls</span>
+                    <div class="cost-track"><div class="cost-fill" style="width: 12%;"></div></div>
+                    <span class="cost-amount">$120</span>
+                </div>
+                <div class="cost-row">
+                    <span class="cost-label">Misc & Souvenirs</span>
+                    <div class="cost-track"><div class="cost-fill" style="width: 10%;"></div></div>
+                    <span class="cost-amount">$100</span>
+                </div>
+            </div>
+            <div class="cost-total">
+                <span class="cost-total-label">Total for the trip</span>
+                <span class="cost-total-amount">~$2,550</span>
+            </div>
+            <p class="cost-note">Sample figures for a two-person, six-day trip with three nights in Chicago — swap in your own numbers before publishing.</p>
+        </section>
+
+        <!-- Packing checklist -->
+        <section class="packing-section" id="packing-checklist">
+            <h2>What to Pack</h2>
+            <p class="packing-sub">Built for a spring road trip: waterfalls in the morning, city sidewalks by afternoon</p>
+            <div class="packing-grid">
+                <div class="packing-card">
+                    <h3>Documents & Essentials</h3>
+                    <ul class="packing-list">
+                        <li><span class="packing-check"></span> Driver's license & registration</li>
+                        <li><span class="packing-check"></span> Hotel & timed-entry confirmations</li>
+                        <li><span class="packing-check"></span> Wallet, cards, some cash for tolls</li>
+                        <li><span class="packing-check"></span> Phone charger & car mount</li>
+                        <li><span class="packing-check"></span> Printed backup route / offline maps</li>
+                    </ul>
+                </div>
+                <div class="packing-card">
+                    <h3>Clothing</h3>
+                    <ul class="packing-list">
+                        <li><span class="packing-check"></span> Layers — cool mornings, mild afternoons</li>
+                        <li><span class="packing-check"></span> Waterproof jacket or windbreaker</li>
+                        <li><span class="packing-check"></span> Comfortable walking shoes</li>
+                        <li><span class="packing-check"></span> One dressier outfit for dinners out</li>
+                        <li><span class="packing-check"></span> Hat & sunglasses</li>
+                    </ul>
+                </div>
+                <div class="packing-card">
+                    <h3>Park & Outdoor Gear</h3>
+                    <ul class="packing-list">
+                        <li><span class="packing-check"></span> Sturdy shoes for canyon rim trails</li>
+                        <li><span class="packing-check"></span> Small daypack</li>
+                        <li><span class="packing-check"></span> Reusable water bottle</li>
+                        <li><span class="packing-check"></span> Sunscreen & bug spray</li>
+                        <li><span class="packing-check"></span> Binoculars for lake overlooks</li>
+                    </ul>
+                </div>
+                <div class="packing-card">
+                    <h3>Tech & Road-Trip Comfort</h3>
+                    <ul class="packing-list">
+                        <li><span class="packing-check"></span> Camera or extra phone storage</li>
+                        <li><span class="packing-check"></span> Portable battery pack</li>
+                        <li><span class="packing-check"></span> Downloaded playlists & podcasts</li>
+                        <li><span class="packing-check"></span> Travel pillow & blanket for night driving</li>
+                        <li><span class="packing-check"></span> Snacks & a good coffee thermos</li>
+                    </ul>
+                </div>
             </div>
         </section>
 
