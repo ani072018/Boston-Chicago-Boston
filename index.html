@@ -178,6 +178,26 @@
             animation: fade-up 1.2s ease-out;
         }
 
+        .hero-eyebrow {
+            display: inline-block;
+            font-family: 'Bodoni Moda', serif;
+            font-style: italic;
+            font-size: 0.85rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--spring-rose);
+            text-decoration: none;
+            margin-bottom: 1.25rem;
+            padding-bottom: 0.4rem;
+            border-bottom: 1px solid rgba(232, 155, 181, 0.4);
+            transition: color 0.25s ease, border-color 0.25s ease;
+        }
+
+        .hero-eyebrow:hover {
+            color: var(--spring-teal);
+            border-color: rgba(123, 168, 159, 0.5);
+        }
+
         @keyframes fade-up {
             from {
                 opacity: 0;
@@ -246,12 +266,6 @@
             max-width: 900px;
             margin: 0 auto;
             padding: 4rem 2rem;
-        }
-
-        .day-section {
-            margin-bottom: 6rem;
-            animation: fade-in-up 0.8s ease-out;
-            animation-fill-mode: both;
         }
 
         @keyframes fade-in-up {
@@ -474,6 +488,31 @@
             opacity: 0.7;
         }
 
+        .footer-brand-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 2rem;
+            padding: 0.65rem 1.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.45);
+            border-radius: 100px;
+            background: rgba(255, 255, 255, 0.08);
+            color: #fff;
+            text-decoration: none;
+            font-family: 'Bodoni Moda', serif;
+            font-style: italic;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            transition: background 0.25s ease, transform 0.2s ease, border-color 0.25s ease;
+        }
+
+        .footer-brand-badge:hover {
+            background: rgba(255, 255, 255, 0.2);
+            border-color: rgba(255, 255, 255, 0.7);
+            transform: translateY(-2px);
+            opacity: 1;
+        }
+
         @media (max-width: 768px) {
             .hero h1 {
                 font-size: 2.5rem;
@@ -500,11 +539,187 @@
             }
         }
 
-        .day-section:nth-child(1) { animation-delay: 0s; }
-        .day-section:nth-child(2) { animation-delay: 0.15s; }
-        .day-section:nth-child(3) { animation-delay: 0.3s; }
-        .day-section:nth-child(4) { animation-delay: 0.45s; }
-        .day-section:nth-child(5) { animation-delay: 0.6s; }
+        /* ===== Sticky side nav + layout wrap ===== */
+        .layout-wrap {
+            max-width: 1180px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 2.5rem;
+        }
+
+        .side-nav {
+            width: 168px;
+            flex-shrink: 0;
+            position: sticky;
+            top: 100px;
+        }
+
+        .side-nav-inner {
+            background: linear-gradient(135deg, rgba(244, 212, 232, 0.2) 0%, rgba(200, 230, 201, 0.14) 100%);
+            border: 1px solid rgba(168, 184, 160, 0.3);
+            border-radius: 12px;
+            padding: 1rem 0.75rem;
+            max-height: calc(100vh - 130px);
+            overflow-y: auto;
+        }
+
+        .side-nav-label {
+            font-family: 'Bodoni Moda', serif;
+            font-size: 0.7rem;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: var(--spring-rose);
+            padding: 0.2rem 0.5rem 0.6rem;
+        }
+
+        .side-nav a {
+            display: block;
+            padding: 0.4rem 0.5rem;
+            font-size: 0.82rem;
+            color: var(--text-light);
+            text-decoration: none;
+            border-radius: 6px;
+            transition: background 0.2s ease, color 0.2s ease;
+            line-height: 1.3;
+        }
+
+        .side-nav a:hover {
+            background: rgba(232, 155, 181, 0.12);
+        }
+
+        .side-nav a.active {
+            color: var(--spring-rose);
+            background: rgba(232, 155, 181, 0.18);
+            font-weight: 600;
+        }
+
+        .side-nav .side-nav-divider {
+            height: 1px;
+            background: rgba(168, 184, 160, 0.35);
+            margin: 0.5rem 0.3rem;
+        }
+
+        .content-col {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .content-col > section,
+        .content-col > main {
+            padding-left: 0;
+            padding-right: 0;
+        }
+
+        @media (max-width: 1024px) {
+            .side-nav { display: none; }
+            .layout-wrap { padding: 0; }
+        }
+
+        /* ===== Tabbed day switcher ===== */
+        .day-tabs-section {
+            margin-bottom: 4rem;
+        }
+
+        .day-tabs-bar {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+            margin-bottom: 2rem;
+        }
+
+        .day-tabs-bar::-webkit-scrollbar {
+            display: none;
+        }
+
+        .day-tab-btn {
+            flex-shrink: 0;
+            font-family: 'Lora', serif;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--text-light);
+            background: rgba(168, 184, 160, 0.12);
+            border: 1px solid rgba(168, 184, 160, 0.3);
+            border-radius: 100px;
+            padding: 0.6rem 1.1rem;
+            cursor: pointer;
+            white-space: nowrap;
+            transition: background 0.25s ease, color 0.25s ease, border-color 0.25s ease, transform 0.15s ease;
+        }
+
+        .day-tab-btn:hover {
+            transform: translateY(-1px);
+        }
+
+        .day-tab-btn.active {
+            color: #fff;
+            background: linear-gradient(135deg, var(--spring-rose), var(--spring-teal));
+            border-color: transparent;
+        }
+
+        .day-tab-progress {
+            font-size: 0.78rem;
+            color: var(--text-light);
+            text-align: right;
+            margin-bottom: 0.75rem;
+        }
+
+        .day-panel {
+            display: none;
+            animation: tab-fade-in 0.35s ease;
+        }
+
+        .day-panel.active {
+            display: block;
+        }
+
+        @keyframes tab-fade-in {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .day-header-text {
+            flex: 1;
+        }
+
+        .day-panel .day-header {
+            margin-bottom: 3rem;
+            padding-bottom: 2rem;
+            border-bottom: 2px solid var(--spring-green);
+        }
+
+        .day-tab-nav-btns {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 2.5rem;
+            gap: 1rem;
+        }
+
+        .day-tab-nav-btns button {
+            font-family: 'Lora', serif;
+            font-size: 0.85rem;
+            color: var(--spring-teal);
+            background: transparent;
+            border: 1px solid var(--spring-sage);
+            border-radius: 100px;
+            padding: 0.55rem 1.2rem;
+            cursor: pointer;
+            transition: background 0.2s ease;
+        }
+
+        .day-tab-nav-btns button:hover {
+            background: rgba(200, 230, 201, 0.25);
+        }
+
+        .day-tab-nav-btns button:disabled {
+            opacity: 0.35;
+            cursor: default;
+        }
+
+        @media (max-width: 600px) {
+            .day-tab-btn { font-size: 0.78rem; padding: 0.5rem 0.85rem; }
+        }
 
         .trip-photo {
             width: 100%;
@@ -1100,6 +1315,30 @@
             "@type": "Answer",
             "text": "In Holland, Michigan, don't miss the Tulip Time Festival in April, Windmill Island Gardens with its authentic 18th-century Dutch windmill De Zwaan, downtown's Dutch-influenced storefronts, and local stroopwafel stalls. It's a worthwhile stop on any Boston to Chicago road trip during spring."
           }
+        },
+        {
+          "@type": "Question",
+          "name": "What's it like driving from Boston to Chicago?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Boston to Chicago driving covers roughly 980-1,000 miles, mostly along I-90 West through Massachusetts, New York, Pennsylvania, Ohio, and Indiana. It's a straightforward interstate drive that can be done nonstop in 15-16 hours, though most drivers split it across two days or add scenic detours like the ones on this route."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How long does it take to drive from Chicago to Boston?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Driving from Chicago to Boston takes about 15-16 hours nonstop, covering roughly 980-1,000 miles along I-90 East through Indiana, Ohio, Pennsylvania, and New York. Most people split the Chicago to Boston drive into two days, though it can be done as a single long push if needed."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Chicago or Boston — which is better to visit?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Chicago and Boston offer different strengths: Chicago has a bigger downtown skyline, lakefront parks, world-class museums like the Field Museum and Art Institute, and deep-dish food culture, while Boston offers Revolutionary War history, a walkable historic core, and easy access to New England. Many travelers, including on this route, choose to visit both by road-tripping between them rather than picking just one."
+          }
         }
       ]
     }
@@ -1129,6 +1368,7 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
+            <a href="https://ani072018.github.io/Tales-From-My-Suitcase/" class="hero-eyebrow">Tales From My Suitcase</a>
             <h1>Petals, Parks & Pavement</h1>
             <h2>Boston to Chicago in Spring</h2>
             <div class="hero-meta">
@@ -1157,6 +1397,29 @@
             <li>Spring bonus stop: Holland, Michigan during Tulip Time Festival (mid-to-late April)</li>
         </ul>
     </section>
+
+    <div class="layout-wrap">
+        <aside class="side-nav">
+            <div class="side-nav-inner">
+                <div class="side-nav-label">On this page</div>
+                <a href="#route-map" data-nav>Route map</a>
+                <a href="#best-stops" data-nav>Best stops</a>
+                <a href="#itinerary-overview" data-nav>6-day overview</a>
+                <div class="side-nav-divider"></div>
+                <a href="#day1" data-nav data-day>Day 1</a>
+                <a href="#day2" data-nav data-day>Day 2</a>
+                <a href="#day3" data-nav data-day>Day 3</a>
+                <a href="#day4" data-nav data-day>Day 4</a>
+                <a href="#day5" data-nav data-day>Day 5</a>
+                <a href="#day6" data-nav data-day>Day 6</a>
+                <div class="side-nav-divider"></div>
+                <a href="#cost-breakdown" data-nav>Costs</a>
+                <a href="#packing-checklist" data-nav>Packing</a>
+                <a href="#faq" data-nav>FAQ</a>
+            </div>
+        </aside>
+
+        <div class="content-col">
 
     <!-- Route Map -->
     <section class="route-map-section" id="route-map">
@@ -1318,13 +1581,25 @@
 
     <!-- Main Content -->
     <main>
-        <!-- Day 1 -->
-        <section class="day-section" id="day1">
-            <div class="day-header">
-                <div class="day-number">Day One</div>
-                <h2 class="day-title">The Road Begins at Eleven</h2>
-                <p class="day-subtitle">April 19, 2026 | Boston → Letchworth → Presque Isle → Holland, Michigan</p>
+        <div class="day-tabs-section" id="day-tabs">
+            <div class="day-tabs-bar" role="tablist" aria-label="Trip days">
+                <button class="day-tab-btn active" data-target="day1" role="tab" aria-selected="true">Day 1 · Boston → Holland</button>
+                <button class="day-tab-btn" data-target="day2" role="tab" aria-selected="false">Day 2 · Tulips → Chicago</button>
+                <button class="day-tab-btn" data-target="day3" role="tab" aria-selected="false">Day 3 · Lake & Cloud</button>
+                <button class="day-tab-btn" data-target="day4" role="tab" aria-selected="false">Day 4 · Museum & Route 66</button>
+                <button class="day-tab-btn" data-target="day5" role="tab" aria-selected="false">Day 5 · To Pennsylvania</button>
+                <button class="day-tab-btn" data-target="day6" role="tab" aria-selected="false">Day 6 · Home</button>
             </div>
+            <div class="day-tab-progress">Day <span id="day-tab-current">1</span> of 6</div>
+
+        <!-- Day 1 -->
+        <div class="day-panel active" id="day1" role="tabpanel">
+                <div class="day-header">
+                    <div class="day-number">Day One</div>
+                    <h2 class="day-title">The Road Begins at Eleven</h2>
+                    <p class="day-subtitle">April 19, 2026 | Boston → Letchworth → Presque Isle → Holland, Michigan</p>
+                </div>
+
 
             <p>There's something magical about beginning a road trip after sunset — the city still buzzing behind you, highway lights flickering rhythmically along the road, and endless miles of adventure stretching beyond the windshield.</p>
 
@@ -1349,15 +1624,19 @@
             <p>We rolled into Holland, Michigan just before midnight, checked into the hotel, and collapsed in that perfect kind of exhaustion that comes after a full day of travel done right.</p>
 
             <div class="divider">✦</div>
-        </section>
+                <div class="day-tab-nav-btns">
+                    <button type="button" class="day-tab-prev" disabled>← Previous day</button>
+                    <button type="button" class="day-tab-next" data-target="day2">Next day →</button>
+                </div>
+        </div>
 
         <!-- Day 2 -->
-        <section class="day-section" id="day2">
-            <div class="day-header">
-                <div class="day-number">Day Two</div>
-                <h2 class="day-title">A Town Dressed in Tulips</h2>
-                <p class="day-subtitle">April 20, 2026 | Holland, Michigan → Chicago, Illinois</p>
-            </div>
+        <div class="day-panel" id="day2" role="tabpanel">
+                <div class="day-header">
+                    <div class="day-number">Day Two</div>
+                    <h2 class="day-title">A Town Dressed in Tulips</h2>
+                    <p class="day-subtitle">April 20, 2026 | Holland, Michigan → Chicago, Illinois</p>
+                </div>
 
             <p>Holland, Michigan in April feels like walking straight into a painting that hasn't realized it's being watched. The town doesn't just decorate for spring — it overflows with it. Every street, park, and roadside median bursts into color, tulips everywhere in unapologetic abundance: vivid crimson, soft butter yellow, deep royal violet, and those unmistakable coral-pink blooms that feel almost engineered for maximum impact.</p>
 
@@ -1384,15 +1663,19 @@
             </div>
 
             <div class="divider">✦</div>
-        </section>
+                <div class="day-tab-nav-btns">
+                    <button type="button" class="day-tab-prev" data-target="day1">← Previous day</button>
+                    <button type="button" class="day-tab-next" data-target="day3">Next day →</button>
+                </div>
+        </div>
 
         <!-- Day 3 -->
-        <section class="day-section" id="day3">
-            <div class="day-header">
-                <div class="day-number">Day Three</div>
-                <h2 class="day-title">Under the Lake, Under the Cloud</h2>
-                <p class="day-subtitle">April 21, 2026 | Chicago — Shedd Aquarium · Millennium Park · Downtown</p>
-            </div>
+        <div class="day-panel" id="day3" role="tabpanel">
+                <div class="day-header">
+                    <div class="day-number">Day Three</div>
+                    <h2 class="day-title">Under the Lake, Under the Cloud</h2>
+                    <p class="day-subtitle">April 21, 2026 | Chicago — Shedd Aquarium · Millennium Park · Downtown</p>
+                </div>
 
             <p>Chicago's second day was an exercise in contrasts: first we went below the waterline, into the cool blue world of the Shedd Aquarium, then we emerged into the full theatrical brightness of Millennium Park, where the city reflects itself back at you in silver.</p>
 
@@ -1423,15 +1706,19 @@
             <p class="photo-caption">Sweeping views of Chicago from Skydeck 360</p>
 
             <div class="divider">✦</div>
-        </section>
+                <div class="day-tab-nav-btns">
+                    <button type="button" class="day-tab-prev" data-target="day2">← Previous day</button>
+                    <button type="button" class="day-tab-next" data-target="day4">Next day →</button>
+                </div>
+        </div>
 
         <!-- Day 4 -->
-        <section class="day-section" id="day4">
-            <div class="day-header">
-                <div class="day-number">Day Four</div>
-                <h2 class="day-title">Field Museum, Piers, and the Mother Road</h2>
-                <p class="day-subtitle">April 22, 2026 | Chicago — Field Museum · Navy Pier · Route 66</p>
-            </div>
+        <div class="day-panel" id="day4" role="tabpanel">
+                <div class="day-header">
+                    <div class="day-number">Day Four</div>
+                    <h2 class="day-title">Field Museum, Piers, and the Mother Road</h2>
+                    <p class="day-subtitle">April 22, 2026 | Chicago — Field Museum · Navy Pier · Route 66</p>
+                </div>
 
             <p>If Day Three was about water and reflection, Day Four was about deep time — the Field Museum's thirteen billion years of natural history compressed into a single building — and then, in the evening, the city's own architectural history narrated from the water.</p>
 
@@ -1463,15 +1750,19 @@
             <p>We stood in front of the "Start of Route 66" marker — the original eastern terminus, surprisingly modest, just a simple sign on a street corner. Yet in the quiet of the night, it carried a weight far beyond its size. From this very spot, the legendary highway once stretched all the way to Santa Monica, California — 2,448 miles of road, towns, and changing landscapes.</p>
 
             <div class="divider">✦</div>
-        </section>
+                <div class="day-tab-nav-btns">
+                    <button type="button" class="day-tab-prev" data-target="day3">← Previous day</button>
+                    <button type="button" class="day-tab-next" data-target="day5">Next day →</button>
+                </div>
+        </div>
 
         <!-- Day 5 -->
-        <section class="day-section" id="day5">
-            <div class="day-header">
-                <div class="day-number">Day Five</div>
-                <h2 class="day-title">From Chicago to Pennsylvania</h2>
-                <p class="day-subtitle">April 23, 2026 | A Journey Through America's Heartland</p>
-            </div>
+        <div class="day-panel" id="day5" role="tabpanel">
+                <div class="day-header">
+                    <div class="day-number">Day Five</div>
+                    <h2 class="day-title">From Chicago to Pennsylvania</h2>
+                    <p class="day-subtitle">April 23, 2026 | A Journey Through America's Heartland</p>
+                </div>
 
             <p>Leaving Chicago felt like closing a book before you're quite ready to. The skyline shrank in the rearview mirror with characteristic reluctance — even retreating, it takes up more visual space than most cities manage at their best.</p>
 
@@ -1482,15 +1773,19 @@
             <p>Hershey received us that night with a faint, almost playful sweetness in the air — the kind that seems to hang over the town itself. The Hershey Company is often credited with this signature scent, carried by its factory ventilation that locals say runs day and night, drifting chocolate notes across streets, intersections, and quiet neighborhoods.</p>
 
             <div class="divider">✦</div>
-        </section>
+                <div class="day-tab-nav-btns">
+                    <button type="button" class="day-tab-prev" data-target="day4">← Previous day</button>
+                    <button type="button" class="day-tab-next" data-target="day6">Next day →</button>
+                </div>
+        </div>
 
         <!-- Day 6 -->
-        <section class="day-section" id="day6">
-            <div class="day-header">
-                <div class="day-number">Day Six</div>
-                <h2 class="day-title">History, Chocolate, Outlets, and Home</h2>
-                <p class="day-subtitle">April 24, 2026 | Gettysburg → Hershey → King of Prussia → Boston</p>
-            </div>
+        <div class="day-panel" id="day6" role="tabpanel">
+                <div class="day-header">
+                    <div class="day-number">Day Six</div>
+                    <h2 class="day-title">History, Chocolate, Outlets, and Home</h2>
+                    <p class="day-subtitle">April 24, 2026 | Gettysburg → Hershey → King of Prussia → Boston</p>
+                </div>
 
             <p>The last day of a road trip has its own particular emotional weather — a brightness tinged with mild pre-emptive nostalgia, the trip not yet over but already being remembered.</p>
 
@@ -1521,7 +1816,14 @@
             <div class="highlight">
                 "Every road trip ends with the same feeling: that you are slightly different than when you left, and that the difference, while difficult to name precisely, is wholly good."
             </div>
-        </section>
+                <div class="day-tab-nav-btns">
+                    <button type="button" class="day-tab-prev" data-target="day5">← Previous day</button>
+                    <button type="button" class="day-tab-next" disabled>Next day →</button>
+                </div>
+        </div>
+
+        </div>
+        <!-- end day tabs -->
 
         <!-- Cost breakdown infographic -->
         <section class="cost-section" id="cost-breakdown">
@@ -1530,40 +1832,39 @@
             <div class="cost-bars">
                 <div class="cost-row">
                     <span class="cost-label">Gas</span>
-                    <div class="cost-track"><div class="cost-fill" style="width: 22%;"></div></div>
+                    <div class="cost-track"><div class="cost-fill" style="width: 38%;"></div></div>
                     <span class="cost-amount">$230</span>
                 </div>
                 <div class="cost-row">
                     <span class="cost-label">Lodging</span>
                     <div class="cost-track"><div class="cost-fill" style="width: 100%;"></div></div>
-                    <span class="cost-amount">$1,050</span>
+                    <span class="cost-amount">$600</span>
                 </div>
                 <div class="cost-row">
                     <span class="cost-label">Food & Drink</span>
-                    <div class="cost-track"><div class="cost-fill" style="width: 55%;"></div></div>
+                    <div class="cost-track"><div class="cost-fill" style="width: 97%;"></div></div>
                     <span class="cost-amount">$580</span>
                 </div>
                 <div class="cost-row">
                     <span class="cost-label">Attractions</span>
-                    <div class="cost-track"><div class="cost-fill" style="width: 45%;"></div></div>
-                    <span class="cost-amount">$470</span>
+                    <div class="cost-track"><div class="cost-fill" style="width: 67%;"></div></div>
+                    <span class="cost-amount">$400</span>
                 </div>
                 <div class="cost-row">
                     <span class="cost-label">Parking & Tolls</span>
-                    <div class="cost-track"><div class="cost-fill" style="width: 12%;"></div></div>
+                    <div class="cost-track"><div class="cost-fill" style="width: 20%;"></div></div>
                     <span class="cost-amount">$120</span>
                 </div>
                 <div class="cost-row">
                     <span class="cost-label">Misc & Souvenirs</span>
-                    <div class="cost-track"><div class="cost-fill" style="width: 10%;"></div></div>
+                    <div class="cost-track"><div class="cost-fill" style="width: 17%;"></div></div>
                     <span class="cost-amount">$100</span>
                 </div>
             </div>
             <div class="cost-total">
                 <span class="cost-total-label">Total for the trip</span>
-                <span class="cost-total-amount">~$2,550</span>
+                <span class="cost-total-amount">~$2,030</span>
             </div>
-            <p class="cost-note">Sample figures for a two-person, six-day trip with three nights in Chicago — swap in your own numbers before publishing.</p>
         </section>
 
         <!-- Packing checklist -->
@@ -1652,10 +1953,26 @@
                 <h3>What are the best things to do in Holland, Michigan?</h3>
                 <p>Time it with the Tulip Time Festival in April if you can — the whole town turns into a sea of color. Beyond the tulips, Windmill Island Gardens has a genuine 18th-century working Dutch windmill, and downtown is worth a walk for Dutch storefronts and fresh stroopwafels.</p>
             </div>
+
+            <div class="faq-item">
+                <h3>What's it like driving from Boston to Chicago?</h3>
+                <p>Boston to Chicago driving covers roughly 980-1,000 miles, mostly along I-90 West through Massachusetts, New York, Pennsylvania, Ohio, and Indiana. It's a straightforward interstate drive that can be done nonstop in 15-16 hours, though most drivers split it across two days or add scenic detours like the ones on this route.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>How long does it take to drive from Chicago to Boston?</h3>
+                <p>Driving from Chicago to Boston takes about 15-16 hours nonstop, covering roughly 980-1,000 miles along I-90 East through Indiana, Ohio, Pennsylvania, and New York. Most people split the Chicago to Boston drive into two days, though it can be done as a single long push if needed.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>Chicago or Boston — which is better to visit?</h3>
+                <p>Chicago and Boston offer different strengths: Chicago has a bigger downtown skyline, lakefront parks, world-class museums like the Field Museum and Art Institute, and deep-dish food culture, while Boston offers Revolutionary War history, a walkable historic core, and easy access to New England. Many travelers, including on this route, choose to visit both by road-tripping between them rather than picking just one.</p>
+            </div>
         </section>
     </main>
 
-    
+        </div>
+    </div>
 
     <!-- Footer -->
     <footer>
@@ -1663,6 +1980,7 @@
         <p>A spring journey from Boston to Chicago and back</p>
         <p>April 19–24, 2026</p>
         <p style="margin-top: 1.5rem; font-size: 0.9rem;">Written with care, designed for wanderers, built for storytellers.</p>
+        <a href="https://ani072018.github.io/Tales-From-My-Suitcase/" class="footer-brand-badge">🧳 Tales From My Suitcase</a>
     </footer>
 
     <script>
@@ -1692,33 +2010,112 @@
 
         setInterval(createPetal, 2000);
 
+        // ===== Day tab switching =====
+        const dayTabBtns = Array.from(document.querySelectorAll('.day-tab-btn'));
+        const dayPanels = Array.from(document.querySelectorAll('.day-panel'));
+        const dayTabCurrent = document.getElementById('day-tab-current');
+        const dayTabsSection = document.getElementById('day-tabs');
+
+        function activateDay(dayId, opts = {}) {
+            const panel = document.getElementById(dayId);
+            if (!panel || !panel.classList.contains('day-panel')) return;
+
+            dayPanels.forEach(p => p.classList.remove('active'));
+            panel.classList.add('active');
+
+            dayTabBtns.forEach(btn => {
+                const isMatch = btn.getAttribute('data-target') === dayId;
+                btn.classList.toggle('active', isMatch);
+                btn.setAttribute('aria-selected', isMatch ? 'true' : 'false');
+            });
+
+            if (dayTabCurrent) {
+                dayTabCurrent.textContent = dayId.replace('day', '');
+            }
+
+            if (opts.scroll) {
+                (dayTabsSection || panel).scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        }
+
+        dayTabBtns.forEach(btn => {
+            btn.addEventListener('click', () => activateDay(btn.getAttribute('data-target')));
+        });
+
+        document.querySelectorAll('.day-tab-prev, .day-tab-next').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const target = btn.getAttribute('data-target');
+                if (target) activateDay(target, { scroll: true });
+            });
+        });
+
+        // ===== Top nav + sticky side nav: jump to day tabs or plain sections =====
+        function jumpTo(link) {
+            const targetId = link.getAttribute('href').slice(1);
+            const target = document.getElementById(targetId);
+            if (!target) return;
+
+            if (target.classList && target.classList.contains('day-panel')) {
+                activateDay(targetId, { scroll: true });
+            } else {
+                target.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
         document.querySelectorAll('.nav-links a').forEach(link => {
             link.addEventListener('click', (e) => {
                 e.preventDefault();
-                const target = document.querySelector(link.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth' });
-                }
+                jumpTo(link);
             });
         });
 
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -100px 0px'
-        };
+        document.querySelectorAll('.side-nav a[data-nav]').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                jumpTo(link);
+            });
+        });
 
-        const observer = new IntersectionObserver((entries) => {
+        // ===== Sticky side-nav: highlight the active section while scrolling =====
+        const navLinks = Array.from(document.querySelectorAll('.side-nav a[data-nav]'));
+        const nonDayNavLinks = navLinks.filter(l => !l.hasAttribute('data-day'));
+        const navTargets = nonDayNavLinks
+            .map(link => document.getElementById(link.getAttribute('href').slice(1)))
+            .filter(Boolean);
+
+        const navObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
+                const link = nonDayNavLinks.find(l => l.getAttribute('href') === '#' + entry.target.id);
+                if (!link) return;
                 if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
+                    navLinks.forEach(l => l.classList.remove('active'));
+                    link.classList.add('active');
                 }
             });
-        }, observerOptions);
+        }, { rootMargin: '-110px 0px -70% 0px', threshold: 0 });
 
-        document.querySelectorAll('.day-section').forEach(section => {
-            observer.observe(section);
-        });
+        navTargets.forEach(target => navObserver.observe(target));
+
+        // Highlight the matching side-nav day link whenever a day tab becomes active
+        const sideNavDayLinks = navLinks.filter(l => l.hasAttribute('data-day'));
+        const dayObserverCallback = () => {
+            const activePanel = document.querySelector('.day-panel.active');
+            if (!activePanel) return;
+            const match = sideNavDayLinks.find(l => l.getAttribute('href') === '#' + activePanel.id);
+            if (match && dayTabsSection && dayTabsSection.getBoundingClientRect().top < window.innerHeight * 0.5) {
+                navLinks.forEach(l => l.classList.remove('active'));
+                match.classList.add('active');
+            }
+        };
+        dayTabBtns.forEach(btn => btn.addEventListener('click', dayObserverCallback));
+        if (dayTabsSection) {
+            const dayTabsObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) dayObserverCallback();
+                });
+            }, { rootMargin: '-110px 0px -70% 0px', threshold: 0 });
+            dayTabsObserver.observe(dayTabsSection);
+        }
     </script>
 </body>
 </html>
