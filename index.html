@@ -258,6 +258,13 @@ footer a:hover{opacity:0.7;}
 .map-links{display:flex;gap:12px;flex-wrap:wrap;margin-top:14px;}
 .map-links a{padding:10px 16px;border-radius:100px;font-size:11px;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;border:1px solid rgba(168,184,160,0.3);background:#fff;color:var(--text-dark);}
 .map-links a.gold{border-color:var(--spring-rose);color:#fff;background:linear-gradient(135deg, var(--spring-rose), var(--spring-teal));}
+.stay-section{position:relative;z-index:15;max-width:900px;margin:0 auto 3rem;padding:2.5rem 2rem;}
+.stay-section h2{font-family:'Bodoni Moda',serif;font-size:2rem;color:var(--spring-teal);margin-bottom:0.5rem;text-align:center;}
+.stay-sub{text-align:center;color:var(--text-light);font-style:italic;font-size:0.95rem;margin-bottom:2rem;}
+.stay-card{background:#fff;border:1px solid rgba(168,184,160,0.3);border-radius:16px;overflow:hidden;box-shadow:0 14px 34px rgba(0,0,0,0.06);}
+.stay-card iframe{display:block;border:0;width:100%;}
+.stay-note{font-size:0.82rem;color:var(--text-light);text-align:center;font-style:italic;margin-top:1rem;}
+@media(max-width:768px){.stay-section h2{font-size:1.5rem;}.stay-section{padding:2rem 1rem;}}
 </style>
 </head>
 <body>
@@ -281,6 +288,7 @@ footer a:hover{opacity:0.7;}
 <div class="toc-title">On this page — jump to</div>
 <ol>
 <li><a href="#route-map">Route Map — 8 Stops</a></li>
+<li><a href="#where-to-stay">Where to Stay</a></li>
 <li><a href="#best-stops">Best Stops Between Boston & Chicago</a></li>
 <li><a href="#itinerary-overview">6-Day Overview</a></li>
 <li><a href="#day-tabs">Day-by-Day Story — Tulips to Chicago</a></li>
@@ -311,7 +319,7 @@ footer a:hover{opacity:0.7;}
 <aside class="side-nav">
 <div class="side-nav-inner">
 <div class="side-nav-label">On this page</div>
-<a href="#route-map" data-nav>Route map</a><a href="#best-stops" data-nav>Best stops</a><a href="#itinerary-overview" data-nav>6-day overview</a>
+<a href="#route-map" data-nav>Route map</a><a href="#where-to-stay" data-nav>Where to stay</a><a href="#best-stops" data-nav>Best stops</a><a href="#itinerary-overview" data-nav>6-day overview</a>
 <div class="side-nav-divider"></div>
 <a href="#day1" data-nav data-day>Day 1</a><a href="#day2" data-nav data-day>Day 2</a><a href="#day3" data-nav data-day>Day 3</a><a href="#day4" data-nav data-day>Day 4</a><a href="#day5" data-nav data-day>Day 5</a><a href="#day6" data-nav data-day>Day 6</a>
 <div class="side-nav-divider"></div>
@@ -348,6 +356,15 @@ footer a:hover{opacity:0.7;}
 <a href="https://www.google.com/maps/dir/Boston,+MA/Letchworth+State+Park,+NY/Presque+Isle+State+Park,+PA/Holland,+MI/Chicago,+IL/Hershey,+PA/Boston,+MA/" target="_blank">Open full 8-stop route in Google Maps →</a>
 <a href="https://www.google.com/maps/dir/Boston,+MA/Chicago,+IL/" target="_blank" class="gold">Fastest I-90 Route</a>
 </div>
+</section>
+
+<section class="stay-section" id="where-to-stay">
+<h2>Where to Stay Along the Route</h2>
+<p class="stay-sub">Hand-picked stays near your 8 stops — from Erie lakefront to downtown Chicago. Map powered by Stay22.</p>
+<div class="stay-card">
+<iframe id="stay22-widget" width="100%" height="428" src="https://www.stay22.com/embed/6ade59754f7b347b81c09d78" frameborder="0"></iframe>
+</div>
+<p class="stay-note">Tip: Zoom the map to Holland, MI for Tulip Time inns, Presque Isle for lakefront cottages, and Chicago Loop for museum-district hotels. Booking via map supports this guide.</p>
 </section>
 
 <section class="best-stops-section" id="best-stops">
